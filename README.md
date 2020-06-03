@@ -1,1 +1,1 @@
-# demo-api
+# DemoApi
