@@ -5,7 +5,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 </head>
   <body>
-     <h3 class="text-center"><mark>Here is the plant's details</mark></h3>
+     <h3 class="text-center"><mark>Here is the all plant's details information</mark></h3>
+        <div style="float: right;">
+        <form action ="/" method = "GET">
+            <input type="hidden" name="">
+            <button type="submit" class="btn btn-primary">Go back to home</button>
+        </form>
+        </div>
      <table  class="table table-striped">
          <tr>
              <th>Id</th>

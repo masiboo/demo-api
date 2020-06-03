@@ -71,11 +71,11 @@ public class PlantServiceImpl implements PlantService {
      * @param to end range
      * @return List of Plant
      */
-    private String limitJsonString(String jsonString, String from, String to ){
+    private String limitJsonString(String jsonData, String from, String to ){
         int intFrom = convertStringToInt(from);
         int intTo = convertStringToInt(to);
         List<Plant> allPlants = new ArrayList<>();
-        JSONObject root = new JSONObject(jsonString);
+        JSONObject root = new JSONObject(jsonData);
         JSONArray plants = root.getJSONArray(Plant.KEY_ROOT_ARRAY);
 
         for(int i = 0; i < plants.length(); i++){
@@ -88,7 +88,9 @@ public class PlantServiceImpl implements PlantService {
             plant.setSpecies(jsonPlant.getString(Plant.KEY_SPECIES));
             allPlants.add(plant);
         }
-
+        if(intTo > allPlants.size()){
+            intTo = allPlants.size();
+        }
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             if(intFrom < 0 || intTo <= 0 ){
@@ -114,6 +116,9 @@ public class PlantServiceImpl implements PlantService {
         int intFrom = convertStringToInt(from);
         int intTo = convertStringToInt(to);
         List<Plant> allPlants = convertJsonToObject(jsonData);
+        if(intTo > allPlants.size()){
+            intTo = allPlants.size();
+        }
         if(intFrom < 0 || intTo <= 0 ){
             return allPlants;
         }else{
