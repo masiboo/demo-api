@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 </head>
   <body>
-     <h2 class="text-center"><mark>Here is the plants details</mark></h2>
+     <h3 class="text-center"><mark>Here is the plant's details</mark></h3>
      <table  class="table table-striped">
          <tr>
              <th>Id</th>

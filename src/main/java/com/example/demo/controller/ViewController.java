@@ -16,13 +16,27 @@ public class ViewController {
   @Autowired
   PlantService plantService;
 
+  /**
+   * This will show the index page.
+   * @since 03-06-2020
+   * @return
+   */
   @GetMapping("/")
   public String index(){
     return "index";
   }
 
+  /**
+   * This will get all plant details in JSON format within the given range from plantplaces.com
+   * in response with HTTP status code 200. If from or to blank it will fetch all data
+   * @since 03-06-2020
+   * @param model send data to view
+   * @param from start range
+   * @param to end range
+   * @return
+   */
   @GetMapping("/getPlant")
-  public String getTest(ModelMap model,
+  public String getPlant(ModelMap model,
                         @RequestParam(required = false) String from,
                         @RequestParam(required = false) String to){
     List<Plant> plants =  plantService.getJsonObject(from, to);
