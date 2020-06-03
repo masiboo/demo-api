@@ -11,7 +11,7 @@ public class PlantRestController {
     @Autowired
     PlantService plantService;
 
-    @GetMapping("/getxxxx")
+    @GetMapping("/getAllPlant")
     public String getTest(){
         return   plantService.getJsonString(null, null);
     }
