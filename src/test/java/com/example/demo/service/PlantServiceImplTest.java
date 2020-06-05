@@ -18,7 +18,7 @@ import static org.mockito.Mockito.when;
 class PlantServiceTest {
 
     @InjectMocks
-    private PlantServiceImpl plantService;
+    private PlantServiceImpl plantServiceImpl;
 
     @Mock
     private RestTemplate restTemplate;
@@ -38,7 +38,8 @@ class PlantServiceTest {
 
         // act
         when(restTemplate.getForEntity(url, String.class)).thenReturn(mocResponse);
-        String actualJson = plantService.getJson();
+        String actualJson = plantServiceImpl.getJson();
+
         // assert
         assertSame(expectedJson, actualJson);
     }
